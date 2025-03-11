@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Disallow: /images
+
+User-agent: bingbot
+Disallow: /images
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.testpartners.com/sitemap.xml

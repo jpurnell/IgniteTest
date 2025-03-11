@@ -1,0 +1,102 @@
+<!doctype html>
+<html data-bs-theme="auto" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Test Partners" name="author" />
+    <meta content="Ignite v0.5.0" name="generator" />
+    <title>Welcome Test Partners</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://www.testpartners.com/" rel="canonical" />
+    <script>(function() {
+    function getThemePreference() {
+        return localStorage.getItem('custom-theme') || 'auto';
+    }
+
+    function applyTheme(themeID) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const lightThemeID = document.documentElement.getAttribute('data-light-theme') || 'light';
+        const darkThemeID = document.documentElement.getAttribute('data-dark-theme') || 'dark';
+        const actualThemeID = themeID === 'auto' ? (prefersDark ? darkThemeID : lightThemeID) : themeID;
+
+        document.documentElement.setAttribute('data-bs-theme', actualThemeID);
+        document.documentElement.setAttribute('data-theme-state', themeID);
+    }
+
+    function applySyntaxTheme() {
+        const syntaxTheme = getComputedStyle(document.documentElement)
+            .getPropertyValue('--syntax-highlight-theme').trim().replace(/"/g, '');
+
+        if (!syntaxTheme) return;
+
+        document.querySelectorAll('link[data-highlight-theme]').forEach(link => {
+            link.setAttribute('disabled', 'disabled');
+        });
+
+        const themeLink = document.querySelector(`link[data-highlight-theme="${syntaxTheme}"]`);
+        if (themeLink) {
+            themeLink.removeAttribute('disabled');
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const currentTheme = getThemePreference();
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+            applySyntaxTheme();
+        }
+    });
+
+    const savedTheme = getThemePreference();
+    applyTheme(savedTheme);
+    applySyntaxTheme();
+})();
+</script>
+    <meta content="Test Partners" property="og:site_name" />
+    <meta content="Welcome Test Partners" property="og:title" />
+    <meta content="Welcome Test Partners" name="twitter:title" />
+    <meta content="https://www.testpartners.com/" property="og:url" />
+    <meta content="testpartners.com" name="twitter:domain" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="on" name="twitter:dnt" />
+    <meta content="Discover strategic opportunities with Test Partners! We focus on working with promising enterprises that demonstrate strong growth potential. Partner with us to elevate your business to new heights—let’s create lasting value together!" name="description" />
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-KX3Q54VR"></script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KX3Q54VR');</script>
+    <link href="/css/main.css" rel="stylesheet" />
+  </head>
+  <body class="container">
+    <header>
+      <nav id="navigationBar" class="navbar navbar-expand-md" style="background-color: rgb(211 211 211 / 100%); padding-bottom: 16px" data-bs-theme="light">
+        <div class="container">
+          <a href="/" class="link-underline link-underline-opacity-100 link-underline-opacity-100-hover navbar-brand">LOGO</a>
+          <button type="button" class="btn navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="col justify-content-end mb-2 mb-md-0 navbar-nav">
+              <li class="nav-item"></li>
+              <li class="nav-item"><a href="about-us" class="link-underline link-underline-opacity-100 link-underline-opacity-100-hover nav-link"><p class="mb-0">foo</p></a></li>
+              <li class="nav-item"><a href="#contactUs" class="link-underline link-underline-opacity-100 link-underline-opacity-100-hover nav-link"><button type="button" class="btn btn-primary btn-sm">Get in Touch</button></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div>
+      <p>3/11/2025, 11:59 AM</p>
+      <div id="hero" style="max-width: min(9223372036854775807px, 100%)">
+        <img alt="A Panorama image from the Gile Mountain Fire Tower in Norwich, VT" src="/images/background/gile_panorama.jpeg" class="img-fluid" />
+      </div>
+      <div id="Philosophy">
+        <p>Philosophy</p>
+      </div>
+      <div id="contactUs">
+        <p>Contact Us goes here.</p>
+        <img alt="A Panorama image from the Gile Mountain Fire Tower in Norwich, VT" src="/images/background/gile_panorama.jpeg" class="img-fluid" />
+      </div>
+    </div>
+    <p class="mt-5 text-center">Created in Swift with <a href="https://github.com/twostraws/Ignite" class="link-underline link-underline-opacity-100 link-underline-opacity-100-hover">Ignite</a></p>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+  </body>
+</html>
